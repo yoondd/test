@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원정보</legend>
+            <label for="username">회원명</label>
+            <input type="text" placeholder="성함을 입력해주세요" id="username">
+            <label for="usertel">연락처</label>
+            <input type="tel" placeholder="연락처를 입력해주세요" id="usertel">
+            <hr>
+            <label for="userbirth">회원생년월일</label>
+            <input type="date" id="userbirth">
+            
+            <input type="radio" name="usergender" id="man">
+            <label for="man">남성</label>
+            <input type="radio" name="usergender" id="woman">
+            <label for="woman">여성</label>
+        </fieldset>
+        <fieldset>
+            <legend>배송지정보</legend>
+            <label for="address">배송지</label>
+            <input type="text" placeholder="주소를 입력해주세요." id="address">
+            <label for="tel2">연락처</label>
+            <input type="tel" placeholder="받는 분의 연락처를 입력해주세요." id="tel2">
+            <hr>
+            <p>배송을 원하는 장소를 모두 선택하세요.</p>
+            <input type="checkbox" name="userplace" id="place1">
+            <label for="place1">집 앞</label>
+            <input type="checkbox" name="userplace" id="place2">
+            <label for="place2">경비실</label>
+            <input type="checkbox" name="userplace" id="place3">
+            <label for="place3">무인택배함</label>
+            <hr>
+            <textarea id="message" cols="60" rows="5" placeholder="배송 메세지를 입력해주세요"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>기타정보</legend>
+            <label for="pay">결제방법</label>
+            <select id="pay">
+                <option>카드결제</option>
+                <option>무통장입금</option>
+                <option>후불결제</option>
+            </select>
+            <label for="usercolor">선호하는 색상</label>
+            <input type="color" id="usercolor">
+            <hr>
+            <label for="userfile">프로필사진</label>
+            <input type="file" id="userfile">
+
+
+        </fieldset>
+        
+        <input type="reset" value="다시작성하기">
+        <input type="submit" value="등록하기">
+    </form>
+</body>
+</html>
