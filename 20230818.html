@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./css/20230818.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/jquery.js"></script>
+    <header>
+        <h1>LOGO</h1>
+        <i class="xi-bars"></i>
+    </header>
+    <!-- <div class="banner"></div> -->
+
+    <div class="menubox">
+        <ul>
+            <li>Home</li>
+            <li>Service</li>
+            <li>Portfolio</li>
+            <li>Contact us</li>
+        </ul>
+        <i class="xi-close"></i>
+    </div>
+
+    <script>
+        // document.querySelector('.menubox').style.display = 'none';
+
+        // document.querySelector('.xi-bars').onclick = function(){
+        //     document.querySelector('.menubox').style.display = 'flex';
+        // }
+
+
+        $('.menubox').hide();
+
+        $('.xi-bars').click(function(){
+            $('.menubox').slideDown();
+        });
+
+        $('.xi-close').click(function(){
+            $('.menubox').slideUp();
+        });
+    </script>
+
+    <hr>
+
+    <input type="text">
+    <input type="color" id="color1">
+    <input type="color" id="color2">
+    <button id="btn">확인</button>
+
+
+    <div class="box"></div>
+    
+    <script>
+        
+
+        btn.onclick = function(){
+
+
+            console.log('color1.value');
+            console.log(color2.value);
+
+            var c1 = color1.value;
+            var c2 = color2.value;
+
+            // $('.box').css('background-image','linear-gradient('+color1.value+',blue)');
+
+            $('.box').css('background-image',`linear-gradient(to right bottom,${c1},${c2})`);
+
+            // document.querySelector('.box').style.backgroundImage = `linear-gradient(${color1.value},${color2.value})`;
+            
+
+            // 틀린코드
+            // $('.box').style.backgroundImage = 'linear-gradient(red,blue)';
+
+            // 틀린코드
+            // document.querySelector('.box').css();
+
+
+        }
+    </script>
+
+
+<!-- 예제구현 -->
+<img src="./image/ex8.jpg" alt="">
+
+
+</body>
+</html>
