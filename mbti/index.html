@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./mbti.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MBTI test</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <div class="container">
+        <h1>MBTI 검사지</h1>
+        <input type="text" placeholder="이름을 입력해주세요" class="myname">
+
+        <div>
+            <h2>1. 나는 외향적인 편이다</h2>
+            <input type="radio" name="mbti1" value="E"> 그렇다
+            <input type="radio" name="mbti1" value="I"> 아니다
+        </div>
+        <div>
+            <h2>2. 나는 현실주의자다</h2>
+            <input type="radio" name="mbti2" value="S"> 그렇다
+            <input type="radio" name="mbti2" value="N"> 아니다
+        </div>
+        <div>
+            <h2>3. 나는 논리적인 것을 좋아한다</h2>
+            <input type="radio" name="mbti3" value="T"> 그렇다
+            <input type="radio" name="mbti3" value="F"> 아니다
+        </div>
+        <div>
+            <h2>4. 나는 철저히 계획에 따라 움직인다</h2>
+            <input type="radio" name="mbti4" value="J"> 그렇다
+            <input type="radio" name="mbti4" value="P"> 아니다
+        </div>
+
+        <button class="btn">MBTI 검사완료</button>
+    </div>
+
+    
+    <div class="popup">
+        <span>테스트문장</span>
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="popupbg"></div>
+
+
+    <script>
+        $('.popupbg').hide();
+        $('.popup').hide();
+        var name1 = '';
+
+        $('.btn').click(function(){
+            // 이름가져오기
+            name1 = $('.myname').val();
+
+            // E냐 I냐 가져오기
+            var m1 = $(`[name="mbti1"]:checked`).val();
+
+            // N이냐 S냐 가져오기
+            var m2 = $(`[name="mbti2"]:checked`).val();
+
+            var m3 = $(`[name="mbti3"]:checked`).val();
+            var m4 = $(`[name="mbti4"]:checked`).val();
+
+            // console.log(`${name1}님의 MBTI는 '${m1+m2+m3+m4}'입니다`);
+
+            $('.popup span').html(`${name1}님의 MBTI는 '${m1+m2+m3+m4}'입니다`);
+
+            // if(name1!=''){
+            //     $('.popupbg').show();
+            //     $('.popup').show();
+            // }
+
+            if(name1){
+                $('.popupbg').show();
+                $('.popup').show();
+            }else{
+                alert('이름을 입력하세요!');
+                $('.myname').focus();
+            }
+
+            
+        });
+
+
+        $('.popup i').click(function(){
+            $('.popupbg').hide();
+            $('.popup').hide();
+        })
+
+    </script>
+</body>
+</html>
