@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+
+
+        .pf {
+            display: grid;
+            grid-template-columns: repeat(9,1fr);  /*portfolio 총 9글자*/
+
+            width: 1000px;
+            height: 400px;
+            border: 2px solid black;
+            margin: 50px auto;
+            font-size: 150px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 100%;  /*줄간격*/
+
+            overflow: hidden;
+        }
+
+        /* 같은 애니메이션을 적용하지만 각기 다른 속도로 진행 */
+        .p>div {
+            animation: txt 10s infinite linear;
+        }
+        .o>div {
+            animation: txt 7s infinite linear;
+        }
+        .r>div {
+            animation: txt 3s infinite linear;
+        }
+        @keyframes txt {
+            0% {transform: translateY(-50%);}
+            100% {transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <!-- portfolio -->
+    <div class="pf">
+        <div class="p">
+            <div>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+                <span>P</span>
+            </div>
+        </div>
+        <div class="o">
+            <div>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+                <span>O</span>
+            </div>
+        </div>
+        <div class="r">
+            <div>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+                <span>R</span>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
