@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .slide {
+            width: 100%;
+            overflow: hidden;
+        }
+        .wrap {
+            width: 4000px;
+            display: flex;
+        }
+
+        /* 아이템의 크기는 여기서 변경하면됩니다 */
+        .item {
+            width: 400px;
+            padding: 10px 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 슬라이드 -->
+    <div class="slide">
+        <div class="wrap">
+            <div class="item">test1</div>
+            <div class="item">test2</div>
+            <div class="item">test3</div>
+            <div class="item">test4</div>
+            <div class="item">test5</div>
+            <div class="item">test6</div>
+            <div class="item">test7</div>
+        </div>
+    </div>
+
+    <script>
+        
+        var slidetime = 2000;  // 슬라이드의 속도를 입력하세요
+        var itemsize = $('.item').css('width'); //자동으로 각 item의 가로값이 들어갑니다
+
+        moveSlide();
+        setInterval(moveSlide,slidetime);
+        function moveSlide(){
+            $('.wrap').animate({marginLeft:`-${itemsize}`},slidetime,'linear',function(){
+                $('.wrap .item').first().appendTo('.wrap');
+                $('.wrap').css('margin-left','0px');
+            })
+        }
+    </script>
+
+</body>
+</html>
