@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <META name="description" content="완벽한 결혼식 준비: 웨딩클릭과 함께하는 웨딩홀 예약">
+    <META name="keywords" content="결혼준비, 웨딩홀 예약, 예식장, 웨딩박람회, 결혼식비용, 셀프웨딩드레스">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://weddingmaster.kr">
+    <meta property="og:title" content="Wedding Master">
+    <meta property="og:description" content="결혼준비에 필요한 모든 것, 웨딩클릭이 함께합니다. 서울의 최고 웨딩홀을 예약하고, 예산에 맞는 결혼식 비용을 계획해보세요.">
+    <meta property="og:site_name" content="Wedding Master">
+    <title>메인-고객용</title>
+</head>
+<body class="contact">
+    <script src="./js/aos.js"></script>
+    
+    <script src="./js/jquery.min.js"></script>
+    <header>
+       <div class="inner">
+           <h1>
+               <a href="./index.html">
+                   <img src="./img/color-logo.png" alt="hall click">
+               </a>
+           </h1>
+           <nav>
+               <ul>
+                   <li>
+                       <a href="./main.html">고객</a>
+                   </li>
+                   <li>
+                       <a href="./main2.html">플래너</a>
+                   </li>
+                   <li>
+                       <a href="./contact.html" class="active">제휴문의</a>
+                   </li>
+               </ul>
+           </nav>
+           <div class="mobile-menu">
+                <img src="./img/mmenu.png" alt="모바일용메뉴" class="mmenu">
+                <img src="./img/mclose.png" alt="모바일용메뉴닫기" class="mclose">
+           </div>
+           <div class="mobile-openmenu">
+               <ul>
+                   <li>
+                       <a href="./main.html">고객</a>
+                   </li>
+                   <li>
+                       <a href="./main2.html">플래너</a>
+                   </li>
+                   <li>
+                       <a href="./contact.html" class="active">제휴문의</a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+    </header>
+
+     <!-- section01 -->
+     <section class="sec1">
+        <div class="inner">
+            <div class="maintxt">
+                <h3>
+                    <span>제휴문의</span>
+                </h3>
+                <hr class="hr_height5">
+
+                <form action="" class="form">
+                    <div class="required">
+                        <label for="">웨딩홀 명</label>
+                        <input type="text" placeholder="웨딩홀의 이름을 입력해주세요." name="">
+                    </div>
+                    <div class="required">
+                        <label for="">대표자 명</label>
+                        <input type="text" placeholder="대표자 성함을 입력해주세요." name="">
+                    </div>
+                    <div class="required">
+                        <label for="">연락처</label>
+                        <input type="tel" placeholder='"-"없이 휴대전화번호를 입력해주세요.'>
+                    </div>
+                    <div class="required">
+                        <label for="">e-mail</label>
+                        <input type="email" placeholder="승인 안내 및 로그인시 사용할 대표 이메일을 알려주세요.">
+                    </div>
+                    <div class="nodown required">
+                        <label for="">주소</label>
+                        <div class="search_add">
+                            <input type="text" id="sample6_postcode" placeholder="우편번호">
+                            <input type="button" value="주소 입력" class="postbtn" onclick="sample6_execDaumPostcode()">
+                        </div>
+                    </div>
+                    <div class="nodown">
+                        <input type="text" id="sample6_address" placeholder="주소를 검색해 입력해주세요.">
+                    </div>
+                    <div>
+                        <input type="text" id="sample6_detailAddress" placeholder="상세주소를 입력해주세요.">
+                        <input type="text" id="sample6_extraAddress" class="notshow">
+                    </div>
+
+                    <!-- 우편번호찾기 api -->
+                    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
+                    <script>
+                        function sample6_execDaumPostcode() {
+                            new daum.Postcode({
+                                oncomplete: function(data) {
+                                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                    var addr = ''; // 주소 변수
+                                    var extraAddr = ''; // 참고항목 변수
+
+                                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                        addr = data.roadAddress;
+                                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                        addr = data.jibunAddress;
+                                    }
+
+                                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                                    if(data.userSelectedType === 'R'){
+                                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                                            extraAddr += data.bname;
+                                        }
+                                        // 건물명이 있고, 공동주택일 경우 추가한다.
+                                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                        }
+                                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                                        if(extraAddr !== ''){
+                                            extraAddr = ' (' + extraAddr + ')';
+                                        }
+                                        // 조합된 참고항목을 해당 필드에 넣는다.
+                                        document.getElementById("sample6_extraAddress").value = extraAddr;
+
+                                    } else {
+                                        document.getElementById("sample6_extraAddress").value = '';
+                                    }
+
+                                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                    document.getElementById('sample6_postcode').value = data.zonecode;
+                                    document.getElementById("sample6_address").value = addr;
+                                    // 커서를 상세주소 필드로 이동한다.
+                                    // document.getElementById("sample6_detailAddress").focus();
+                                }
+                            }).open();
+                        }
+                    </script>
+
+
+                    <div class="required">
+                        <label for="">신청자 명</label>
+                        <input type="text" placeholder="연락을 남겨드릴 담담자 성함을 입력해주세요.">
+                    </div>
+                    <div class="required">
+                        <label for="">연락 가능 시간</label>
+                        <div class="timebox">
+                            <input type="text" class="timepicker"> <span>~</span> <input type="text" class="timepicker2">
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="">문의 내용</label>
+                        <textarea name="" placeholder="자세한 내용을 입력해주세요."></textarea>
+                    </div>
+                    <div class="submitbtn-cover">
+                        <input type="submit" value="문의하기" class="submitbtn">
+                    </div>
+                </form>
+            </div>
+        </div>
+     </section>
+
+
+     <footer class="txt-white">
+        <div class="f1">
+           <div class="finner inner">
+               <div>
+                   <ul>
+                       <li>
+                           <a href="#"><span>웨딩클릭 BIZ</span></a>
+                       </li>
+                       <li>
+                           <a href="#"><span>웨딩클릭 PLANNER</span></a>
+                       </li>
+                   </ul>
+               </div>
+               <div>
+                   <ul>
+                       <li>
+                           <a href="#">자주 묻는 질문</a>
+                       </li>
+                       <li>
+                           <a href="#">회사소개</a>
+                       </li>
+                       <li>
+                           <a href="#">제휴 문의</a>
+                       </li>
+                   </ul>
+               </div>
+               <div>
+                   <p><span>웨딩클릭 앱 다운로드</span></p>
+                   <div class="btnbox">
+                       <a href="#">
+                           <img src="./img/icon1.png" alt="구글플레이">
+                       </a>
+                       <a href="#">
+                           <img src="./img/icon2.png" alt="앱스토어">
+                       </a>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="f2">
+           <div class="inner">
+               <div><span>Wedding Master</span></div>
+               <ul class="flist">
+                   <li>
+                       <div><span>대표자</span></div>
+                       <div>김상호</div>
+                   </li>
+                   <li>
+                       <div><span>사업자번호</span></div>
+                       <div>212-25-65176</div>
+                   </li>
+               </ul>
+               <ul class="flist2">
+                   <li>
+                       <div>주소</div>
+                   </li>
+                   <li>
+                       <div>TEL:</div>
+                       <div>010-1111-1111</div>
+                   </li>
+                   <li>
+                       <div>FAX:</div>
+                       <div>010-0000-0000</div>
+                   </li>
+               </ul>
+               <p>Copyright © Wedding Master, All Rights Reserved.</p>
+           </div>
+        </div>
+    </footer>
+
+    <div class="mobile-menubg"></div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
