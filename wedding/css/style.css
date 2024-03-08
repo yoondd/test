@@ -12,6 +12,8 @@
 }
 html,body {
     font-size: 18px;
+    width: 100%;
+    overflow-x: hidden;
 }
 .nunito {
     font-family: "Nunito Sans", sans-serif;
